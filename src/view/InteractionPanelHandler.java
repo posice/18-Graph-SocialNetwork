@@ -110,15 +110,13 @@ public class InteractionPanelHandler {
                     String to   = personTo.getText();
                     String[] links = mainController.getLinksBetween(from, to);
                     if(links != null){
-                        String str = from + " -> ";
+                        String str = "";
                         for(int i = 0; i < links.length; i++){
+                            str = str + links[i];
                             if(i != links.length - 1){
-                                str = str + links[i] + " -> ";
-                            }else{
-                                str = str + links[i];
+                                str = str + " -> ";
                             }
-                        }
-                        str = str + to;
+                        }                        
                         addToSysoutput(str);
                     }else{
                         addToSysoutput("Es wurde keine Verbindung zwischen " + from + " und " + to + " gefunden.");
