@@ -132,20 +132,20 @@ public class MainController {
     }
 
     /**
-     * Gibt zurück, ob es sich bei allUsers um einen zusammenhängenden Graphen handelt, also kein Knoten ohne Nachbarn ist.
-     * @return true, falls zusammenhängend, sonst false.
+     * Gibt zurück, ob es keinen Knoten ohne Nachbarn gibt.
+     * @return true, falls ohne einsame Knoten, sonst false.
      */
-    public boolean testIfConnectedEasy(){
-        //TODO 14: Schreibe einen Algorithmus, der explizit den von uns benutzten Aufbau der Datenstruktur Graph und ihre angebotenen Methoden so ausnutzt, dass schnell (!) iterativ geprüft werden kann, ob der Graph allUsers zusammenhängend ist. Dies lässt sich mit einer einzigen Schleife prüfen.
+    public boolean someoneIsLonely(){
+        //TODO 14: Schreibe einen Algorithmus, der explizit den von uns benutzten Aufbau der Datenstruktur Graph und ihre angebotenen Methoden so ausnutzt, dass schnell (!) iterativ geprüft werden kann, ob der Graph allUsers keine einsamen Knoten hat. Dies lässt sich mit einer einzigen Schleife prüfen.
         return false;
     }
 
     /**
-     * Gibt zurück, ob vom ersten Knoten in der Liste aller Knoten ausgehend alle anderen Knoten erreicht, also markiert werden können.
+     * Gibt zurück, ob vom ersten Knoten in der Liste aller Knoten ausgehend alle anderen Knoten erreicht also markiert werden können.
      * Nach der Prüfung werden noch vor der Rückgabe alle Knoten demarkiert.
      * @return true, falls alle Knoten vom ersten ausgehend markiert wurden, sonst false.
      */
-    public boolean testIfConnectedTough(){
+    public boolean testIfConnected(){
         //TODO 15: Schreibe einen Algorithmus, der ausgehend vom ersten Knoten in der Liste aller Knoten versucht, alle anderen Knoten über Kanten zu erreichen und zu markieren.
         return false;
     }
