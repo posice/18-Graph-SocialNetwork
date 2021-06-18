@@ -149,4 +149,32 @@ public class MainController {
         //TODO 15: Schreibe einen Algorithmus, der ausgehend vom ersten Knoten in der Liste aller Knoten versucht, alle anderen Knoten über Kanten zu erreichen und zu markieren.
         return false;
     }
+    
+    /**
+     * Gibt einen String-Array zu allen Knoten zurück, die von einem Knoten ausgehend erreichbar sind, falls die Person vorhanden ist.
+     * Im Anschluss werden vor der Rückgabe alle Knoten demarkiert.
+     * @return Alle erreichbaren Knoten als String-Array, sonst null.
+     */
+    public String[] transitiveFriendships(String name){
+        //TODO 16: Schreibe einen Algorithmus, der ausgehend von einem Knoten alle erreichbaren ausgibt.
+        return null;
+    }
+    
+    
+    /**
+     * Gibt eine kürzeste Verbindung zwischen zwei Personen des Sozialen Netzwerkes als String-Array zurück,
+     * falls die Personen vorhanden sind und sie über eine oder mehrere Ecken miteinander verbunden sind.
+     * @param name01
+     * @param name02
+     * @return Verbindung als String-Array oder null, falls es keine Verbindung gibt.
+    */
+    public String[] shortestPath(String name01, String name02){
+        Vertex user01 = allUsers.getVertex(name01);
+        Vertex user02 = allUsers.getVertex(name02);
+        if(user01 != null && user02 != null){
+            //TODO 17: Schreibe einen Algorithmus, der die kürzeste Verbindung zwischen den Nutzern name01 und name02 als String-Array zurückgibt.
+        }
+        return null;
+    }
+
 }
