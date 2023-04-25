@@ -29,6 +29,7 @@ public class InteractionPanelHandler {
     private JButton someoneIsLonleyButton;
     private JButton transitiveFriendshipsButton;
     private JButton searchShortestPathButton;
+    private JButton testIfConnectedButton;
 
     private MainController mainController;
 
@@ -164,7 +165,31 @@ public class InteractionPanelHandler {
         searchShortestPathButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if(!personFrom.getText().isEmpty() && !personTo.getText().isEmpty()){
+                    String from = personFrom.getText();
+                    String to   = personTo.getText();
+                    String[] path = mainController.shortestPath(from, to);
+                    if(path != null){
+                        String str = "";
+                        for(int i = 0; i < path.length; i++){
+                            str = str + path[i];
+                            if(i != path.length - 1){
+                                str = str + " -> ";
+                            }
+                        }
+                        addToSysoutput(str);
+                    }else{
+                        addToSysoutput("Es wurde keine Verbindung zwischen " + from + " und " + to + " gefunden.");
+                    }
+                }else{
+                    addToSysoutput("Für die Suche müssen Sie zwei Personen angeben.");
+                }
+            }
+        });
+        testIfConnectedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addToSysoutput("Die Prüfung, ob alle Knoten erreichbar sind, ergibt: "+mainController.testIfConnected());
             }
         });
     }
