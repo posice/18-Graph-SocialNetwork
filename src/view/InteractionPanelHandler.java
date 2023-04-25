@@ -26,6 +26,9 @@ public class InteractionPanelHandler {
     private JButton deleteButton;
     private JPanel panel;
     private JTextArea systemOutput;
+    private JButton someoneIsLonleyButton;
+    private JButton transitiveFriendshipsButton;
+    private JButton searchShortestPathButton;
 
     private MainController mainController;
 
@@ -124,6 +127,44 @@ public class InteractionPanelHandler {
                 }else{
                     addToSysoutput("Für die Suche müssen Sie zwei Personen angeben.");
                 }
+            }
+        });
+        someoneIsLonleyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addToSysoutput("Einsame Knoten vorhanden: "+mainController.someoneIsLonely());
+            }
+        });
+        transitiveFriendshipsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!personInSN.getText().isEmpty()){
+                    String[] reachable = mainController.transitiveFriendships(personInSN.getText());
+                    String output = "Von der Person ";
+                    output += personInSN.getText();
+                    output += " ausgehend sind folgende Personen erreichbar: ";
+                    if(reachable != null){
+                        String str = "";
+                        for(int i = 0; i < reachable.length; i++){
+                            str = str + reachable[i];
+                            if(i != reachable.length - 1){
+                                str = str + ", ";
+                            }
+                        }
+                        output += str;
+                    }else{
+                        output += "niemand.";
+                    }
+                    addToSysoutput(output);
+                }else{
+                    addToSysoutput("Für die Suche muss eine Person angegeben werden.");
+                }
+            }
+        });
+        searchShortestPathButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

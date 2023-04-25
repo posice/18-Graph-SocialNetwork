@@ -132,8 +132,8 @@ public class MainController {
     }
 
     /**
-     * Gibt zurück, ob es keinen Knoten ohne Nachbarn gibt.
-     * @return true, falls ohne einsame Knoten, sonst false.
+     * Gibt zurück, ob es einen Knoten ohne Nachbarn gibt.
+     * @return true, falls ein einersamer Knoten vorhanden ist, sonst false.
      */
     public boolean someoneIsLonely(){
         //TODO 14: Schreibe einen Algorithmus, der explizit den von uns benutzten Aufbau der Datenstruktur Graph und ihre angebotenen Methoden so ausnutzt, dass schnell (!) iterativ geprüft werden kann, ob der Graph allUsers keine einsamen Knoten hat. Dies lässt sich mit einer einzigen Schleife prüfen.
