@@ -324,10 +324,12 @@ public class MainController {
                 }
                 connected.next();
             }
-            int counter = 0;
-            for (users.toFirst(); users.hasAccess(); counter++) users.next();
-            for (connected.toFirst(); connected.hasAccess(); counter--) connected.next();
-            if (counter == 0) return true;
+
+            if (allUsers.allVerticesMarked()){
+                allUsers.setAllVertexMarks(false);
+                return true;
+            }
+            allUsers.setAllVertexMarks(false);
         }
         return false;
     }
